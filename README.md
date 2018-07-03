@@ -3,6 +3,7 @@ API todolist - Meteor.JS
 
 # Install :
 > git clone https://github.com/tranoffice/todolistAPI.git
+
 > npm install
 
 # Start API :
