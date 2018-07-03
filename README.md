@@ -1,5 +1,5 @@
 # todolistAPI
-API todolist - Meteor.JS
+API todolist - Meteor.JS / MongoDB
 
 # Install :
 > git clone https://github.com/tranoffice/todolistAPI.git
@@ -7,7 +7,7 @@ API todolist - Meteor.JS
 > npm install
 
 # Start API :
-> meteor
+> meteor ( http://localhost:3000/ )
 
 # Test API with Postman :
 > Import JSON file : todolistAPI/tests/todolistTotem.postman_collection.json
