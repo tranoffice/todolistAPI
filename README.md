@@ -4,6 +4,8 @@ API todolist - Meteor.JS / MongoDB
 # Install :
 > git clone https://github.com/tranoffice/todolistAPI.git
 
+> cd todolistAPI
+
 > npm install
 
 # Start API :
