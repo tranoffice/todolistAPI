@@ -27,6 +27,7 @@ if ( Meteor.isServer ) {
         tasks.push({id: element._id, task: element.task, status: element.status})
       });
       this.response.setHeader('Content-Type','application/json');
+      this.response.setHeader('Access-Control-Allow-Origin','*');
       this.response.end(JSON.stringify(tasks));
     })
     /**
@@ -63,6 +64,7 @@ if ( Meteor.isServer ) {
         }
       }
       this.response.setHeader('Content-Type','application/json');
+      this.response.setHeader('Access-Control-Allow-Origin','*');
       this.response.writeHead(res.code);
       this.response.end(JSON.stringify(res));
     });
@@ -94,6 +96,7 @@ if ( Meteor.isServer ) {
           httpstatus = res.code;
         }
         this.response.setHeader('Content-Type','application/json');
+        this.response.setHeader('Access-Control-Allow-Origin','http://localhost:3001');
         this.response.writeHead(httpstatus);
         this.response.end(JSON.stringify(res));
       }
@@ -137,6 +140,7 @@ if ( Meteor.isServer ) {
           };
         }
         this.response.setHeader('Content-Type','application/json');
+        this.response.setHeader('Access-Control-Allow-Origin','*');
         this.response.writeHead(res.code);
         this.response.end(JSON.stringify(res));
       }
@@ -174,8 +178,10 @@ if ( Meteor.isServer ) {
           };
         }
         this.response.setHeader('Content-Type','application/json');
+        this.response.setHeader('Access-Control-Allow-Origin','*');
         this.response.writeHead(res.code);
         this.response.end(JSON.stringify(res));
       }
     });
 }
+
