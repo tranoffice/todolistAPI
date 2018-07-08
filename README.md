@@ -1,5 +1,5 @@
 # todolistAPI
-API todolist - Meteor.JS / MongoDB
+API todolist - Meteor.JS / MongoDB / Restivus
 
 # Install :
 > git clone https://github.com/tranoffice/todolistAPI.git
