@@ -1,51 +1,68 @@
 import { Meteor } from 'meteor/meteor';
 import { Mongo } from 'meteor/mongo';
 
+colTodolist = new Mongo.Collection('tasks');
+/**
+ * MongoDB :
+ * Collection = tasks
+ * Document = 
+ * > _id : task id
+ * > task: task description
+ * > status: Todo / In progress / Completed 
+ */
 
 if ( Meteor.isServer ) {
   Meteor.startup(() => {
-    colTodolist = new Mongo.Collection('tasks');
-    /**
-     * MongoDB :
-     * Collection = tasks
-     * Document = 
-     * > _id : task id
-     * > task: task description
-     * > status: Todo / In progress / Completed 
-     */
   });
 
-  Router.route('/todotasks', { where: 'server' })
+  var Api = new Restivus({
+    apiPath: '',
+    useDefaultAuth: false,
+    prettyJson: true,
+    defaultHeaders: {
+      'Content-Type': 'application/json',
+      'access-control-allow-origin':'*',
+    }
+  });
+  Api.addCollection(colTodolist);
+  Api.addRoute('todotasks', {authRequired: false}, {
     /**
      * GET /todotasks - Select all tasks
      * ===================================
      */
-    .get(function() {
+    get: function () {
+      console.log('API : todotasks >> GET');
       var tasks = [];
       var tasksList = colTodolist.find().fetch();
       tasksList.forEach(element => {
         tasks.push({id: element._id, task: element.task, status: element.status})
       });
-      this.response.setHeader('Content-Type','application/json');
-      this.response.setHeader('Access-Control-Allow-Origin','*');
-      this.response.end(JSON.stringify(tasks));
-    })
+      return({
+        statusCode: 200,
+        headers: {
+          'Content-Type': 'application/json',
+          'Access-Control-Allow-Origin': '*'
+        },
+        body: JSON.stringify(tasks),
+      });
+    },
     /**
      * POST /todotasks - Create new task
      * ===================================
      */
-    .post(function() {
-      var res;
-      if ( this.request.body.id === undefined ||
-           this.request.body.task === undefined ||
-           this.request.body.status === undefined
-          ) {
+    post: function () {
+      console.log('API : todotasks >> POST');
+      console.log(this.bodyParams);
+      if ( this.bodyParams.id === undefined ||
+        this.bodyParams.task === undefined ||
+        this.bodyParams.status === undefined
+        ) {
         res = {
           "code": 400,
           "message": 'Invalid data'
         };
       } else {
-        var task = colTodolist.find({_id: this.request.body.id}).fetch();
+        var task = colTodolist.find({_id: this.bodyParams.id}).fetch();
         if ( task.length > 0 ) {
           res = {
             "code": 400,
@@ -53,9 +70,9 @@ if ( Meteor.isServer ) {
           };
         } else {
           var retcode = colTodolist.insert({
-            _id: this.request.body.id,
-            task: this.request.body.task,
-            status: this.request.body.status
+            _id: this.bodyParams.id,
+            task: this.bodyParams.task,
+            status: this.bodyParams.status
           })
           res = {
             "code": 200,
@@ -63,28 +80,44 @@ if ( Meteor.isServer ) {
           };
         }
       }
-      this.response.setHeader('Content-Type','application/json');
-      this.response.setHeader('Access-Control-Allow-Origin','*');
-      this.response.writeHead(res.code);
-      this.response.end(JSON.stringify(res));
-    });
+      return({
+        statusCode: res.code,
+        headers: {
+          'Content-Type': 'application/json',
+          'Access-Control-Allow-Origin': '*'
+        },
+        body: res,
+      });
+    }
+  });  
 
-    Router.route('/todotask/:id', { where: 'server' })
+  var ApiTask = new Restivus({
+    apiPath: 'todotask',
+    useDefaultAuth: false,
+    prettyJson: true,
+    defaultHeaders: {
+      'Content-Type': 'application/json',
+      'access-control-allow-origin':'*',
+    }
+  });
+  ApiTask.addCollection(colTodolist);
+  ApiTask.addRoute(':id', {authRequired: false}, {
     /**
-     * GET /todotask/:id - Select a task by id
+     * GET /todotask - BY ID
      * ===================================
      */
-    .get(function() {
+    get: function () {
+      console.log('API : todotask >> GET ID=' + this.urlParams.id);
       var res;
       var httpstatus;
-      if ( this.params.id === undefined ) {
+      if ( this.urlParams.id === undefined ) {
         res = {
           "code": 400,
           "message": 'Bad request - id undefined'
         };
         httpstatus = res.code;
       } else {
-        var task = colTodolist.find({_id: this.params.id}).fetch();
+        var task = colTodolist.find({_id: this.urlParams.id}).fetch();
         if ( task.length > 0 ) {
           res = {"id": task[0]._id, "task": task[0].task, "status": task[0].status};
           httpstatus = 200;
@@ -95,31 +128,38 @@ if ( Meteor.isServer ) {
           };
           httpstatus = res.code;
         }
-        this.response.setHeader('Content-Type','application/json');
-        this.response.setHeader('Access-Control-Allow-Origin','http://localhost:3001');
-        this.response.writeHead(httpstatus);
-        this.response.end(JSON.stringify(res));
       }
-    })
+    
+      return({
+        statusCode: httpstatus,
+        headers: {
+          'Content-Type': 'application/json',
+          'Access-Control-Allow-Origin': '*'
+        },
+        body: res,
+      });
+    },
     /**
-     * PUT /todotask/:id - UPDATE task by id
-     * =====================================
+     * POST /todotask/:id - UPDATE task by id
+     * ======================================
      */
-    .put(function() {
+    post: function() {
+      console.log('API : todotask >> POST ID=' + this.urlParams.id);
+      console.log(this.bodyParams);
       var res;
-      if ( this.params.id === undefined ) {
+      if ( this.urlParams.id === undefined ) {
         res = {
           "code": 400,
           "message": 'Bad request - id undefined'
         };
       } else {
-        var task = colTodolist.find({_id: this.params.id}).fetch();
+        var task = colTodolist.find({_id: this.urlParams.id}).fetch();
         if ( task.length > 0 ) {
           var retcode = colTodolist.update(
-            { _id: this.params.id },
+            { _id: this.urlParams.id },
             { $set: {
-                task: this.request.body.task,
-                status: this.request.body.status
+                task: this.bodyParams.task,
+                status: this.bodyParams.status
             }}
           );
           if ( retcode === 1 ) {
@@ -139,27 +179,28 @@ if ( Meteor.isServer ) {
             "message": 'Not found'
           };
         }
-        this.response.setHeader('Content-Type','application/json');
-        this.response.setHeader('Access-Control-Allow-Origin','*');
-        this.response.writeHead(res.code);
-        this.response.end(JSON.stringify(res));
+        return({
+          statusCode: res.code,
+          body: res,
+        });
       }
-    })
+    },
     /**
      * DELETE /todotask/:id - Delete task by id
      * ========================================
      */
-    .delete(function() {
+    delete: function() {
+      console.log('API : todotask >> DELETE ID=' + this.urlParams.id);
       var res;
-      if ( this.params.id === undefined ) {
+      if ( this.urlParams.id === undefined ) {
         res = {
           "code": 400,
           "message": 'Bad request - id undefined'
         };
       } else {
-        var task = colTodolist.find({_id: this.params.id}).fetch();
+        var task = colTodolist.find({_id: this.urlParams.id}).fetch();
         if ( task.length > 0 ) {
-          var retcode = colTodolist.remove({ _id: this.params.id });
+          var retcode = colTodolist.remove({ _id: this.urlParams.id });
           if ( retcode === 1 ) {
             res = {
               "code": 200,
@@ -177,11 +218,11 @@ if ( Meteor.isServer ) {
             "message": 'Task not found'
           };
         }
-        this.response.setHeader('Content-Type','application/json');
-        this.response.setHeader('Access-Control-Allow-Origin','*');
-        this.response.writeHead(res.code);
-        this.response.end(JSON.stringify(res));
+        return({
+          statusCode: res.code,
+          body: res,
+        });
       }
-    });
+    }
+  });
 }
-
