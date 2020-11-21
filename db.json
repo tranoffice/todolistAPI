@@ -70,20 +70,5 @@
 				"A2111"
 			],
 			"resourceCategory": "TROUBLESHOOTING"
-		},
-		{
-			"id": "2130d4d7-ad4c-489a-b9b2-52fdb0af614d",
-			"filename": "S7/fr/ILM/G930F/REPAIR_TUTO/resources/step8-2.png",
-			"label": "step8-2.png",
-			"lastModified": "2020-10-13T11:46:24.351Z",
-			"contentId": "DIAG_EQ_TREE",
-			"language": "fr",
-			"designation": "S7",
-			"maintenanceLevel": "ILM",
-			"partNumbers": [
-				"G930F",
-				"G930V"
-			],
-			"resourceCategory": "TROUBLESHOOTING"
 		}
 ]
