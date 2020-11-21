@@ -9,4 +9,16 @@
     "body": "String",
     "post": "Post"
   }
+  "download": {
+    "id": "String",
+    "filename": "String",
+    "label": "String",
+    "lastModified": "String",
+    "contentId": "String",
+    "language": "String",
+    "designation": "String",
+    "maintenanceLevel": "String",
+    "partNumbers": "String[]",
+    "resourceCategory": "String"  
+  }
 }
