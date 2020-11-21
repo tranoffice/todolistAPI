@@ -1,103 +1,134 @@
-[
-	{
-		"id": "12d8e618-c164-4083-801f-3b855dc5fbb8",
-		"filename": "A2111_FR/REPAIR_TUTO/resources/step4.jpg",
-		"label": null,
-		"lastModified": "2020-08-18T11:21:49.538Z",
-		"contentId": "REPAIR_TUTO",
-		"language": "fr",
-		"designation": "iPhone 11",
-		"maintenanceLevel": "ILM",
-		"partNumbers": [
-			"A2111"
-		],
-		"resourceCategory": "REPAIR"
-	},
-	{
-		"id": "14ca2b7a-b356-4f6f-ab0d-4e4c7a2c4342",
-		"filename": "A2111_FR/REPAIR_TUTO/resources/step3.jpg",
-		"label": null,
-		"lastModified": "2020-08-18T11:21:49.444Z",
-		"contentId": "REPAIR_TUTO",
-		"language": "fr",
-		"designation": "iPhone 11",
-		"maintenanceLevel": "ILM",
-		"partNumbers": [
-			"A2111"
-		],
-		"resourceCategory": "REPAIR"
-	},
-	{
-		"id": "18dc750e-1d73-4e13-b45e-9cc2ec16527b",
-		"filename": "S7/fr/ILM/G930V/REPAIR_TUTO/resources/step13.png",
-		"label": "step13.png",
-		"lastModified": "2020-10-13T11:46:24.964Z",
-		"contentId": "DIAG_EQ_TREE",
-		"language": "fr",
-		"designation": "S7",
-		"maintenanceLevel": "ILM",
-		"partNumbers": [
-			"G930F",
-			"G930V"
-		],
-		"resourceCategory": "TROUBLESHOOTING"
-	},
-	{
-		"id": "19ad42fb-d1cc-4a6c-9b1e-4bf5ff3fe3a7",
-		"filename": "S7/fr/ILM/G930V/REPAIR_TUTO/resources/Step1.png",
-		"label": "Step1.png",
-		"lastModified": "2020-10-13T11:46:24.654Z",
-		"contentId": "DIAG_EQ_TREE",
-		"language": "fr",
-		"designation": "S7",
-		"maintenanceLevel": "ILM",
-		"partNumbers": [
-			"G930F",
-			"G930V"
-		],
-		"resourceCategory": "TROUBLESHOOTING"
-	},
-	{
-		"id": "1d571994-51e2-4799-ba87-093b1b0da82e",
-		"filename": "A2111_FR/DIAG_EQ_TREE/resources/debrancher-chargeur-pas-utilisé (1).jpg",
-		"label": null,
-		"lastModified": "2020-08-18T11:21:49.254Z",
-		"contentId": "DIAG_EQ_TREE",
-		"language": "fr",
-		"designation": "iPhone 11",
-		"maintenanceLevel": "ILM",
-		"partNumbers": [
-			"A2111"
-		],
-		"resourceCategory": "TROUBLESHOOTING"
-	},
-	{
-		"id": "2130d4d7-ad4c-489a-b9b2-52fdb0af614d",
-		"filename": "S7/fr/ILM/G930F/REPAIR_TUTO/resources/step8-2.png",
-		"label": "step8-2.png",
-		"lastModified": "2020-10-13T11:46:24.351Z",
-		"contentId": "DIAG_EQ_TREE",
-		"language": "fr",
-		"designation": "S7",
-		"maintenanceLevel": "ILM",
-		"partNumbers": [
-			"G930F",
-			"G930V"
-		],
-		"resourceCategory": "TROUBLESHOOTING"
-	},
-	{
-		"id": "24e73c7e-782e-422f-a445-b004936fd10c",
-		"filename": "IF3290741_NA/EQ_IMAGE_REF/IF3290741.PNG",
-		"label": null,
-		"lastModified": "2020-08-05T07:42:20.351Z",
-		"contentId": "EQ_IMAGE_REF",
-		"language": "NA",
-		"designation": "GALAXY S7 CHARGING DAUGHTER BOARD (GLOBAL)",
-		"maintenanceLevel": "NA",
-		"partNumbers": [
-			"IF3290741"
-		],
-		"resourceCategory": "IMAGE"
-	}
-]
+{
+	"apidwn" : [
+		{
+			"id": "12d8e618-c164-4083-801f-3b855dc5fbb8",
+			"filename": "A2111_FR/REPAIR_TUTO/resources/step4.jpg",
+			"label": null,
+			"lastModified": "2020-08-18T11:21:49.538Z",
+			"contentId": "REPAIR_TUTO",
+			"language": "fr",
+			"designation": "iPhone 11",
+			"maintenanceLevel": "ILM",
+			"partNumbers": [
+				"A2111"
+			],
+			"resourceCategory": "REPAIR"
+		},
+		{
+			"id": "14ca2b7a-b356-4f6f-ab0d-4e4c7a2c4342",
+			"filename": "A2111_FR/REPAIR_TUTO/resources/step3.jpg",
+			"label": null,
+			"lastModified": "2020-08-18T11:21:49.444Z",
+			"contentId": "REPAIR_TUTO",
+			"language": "fr",
+			"designation": "iPhone 11",
+			"maintenanceLevel": "ILM",
+			"partNumbers": [
+				"A2111"
+			],
+			"resourceCategory": "REPAIR"
+		},
+		{
+			"id": "18dc750e-1d73-4e13-b45e-9cc2ec16527b",
+			"filename": "S7/fr/ILM/G930V/REPAIR_TUTO/resources/step13.png",
+			"label": "step13.png",
+			"lastModified": "2020-10-13T11:46:24.964Z",
+			"contentId": "DIAG_EQ_TREE",
+			"language": "fr",
+			"designation": "S7",
+			"maintenanceLevel": "ILM",
+			"partNumbers": [
+				"G930F",
+				"G930V"
+			],
+			"resourceCategory": "TROUBLESHOOTING"
+		},
+		{
+			"id": "19ad42fb-d1cc-4a6c-9b1e-4bf5ff3fe3a7",
+			"filename": "S7/fr/ILM/G930V/REPAIR_TUTO/resources/Step1.png",
+			"label": "Step1.png",
+			"lastModified": "2020-10-13T11:46:24.654Z",
+			"contentId": "DIAG_EQ_TREE",
+			"language": "fr",
+			"designation": "S7",
+			"maintenanceLevel": "ILM",
+			"partNumbers": [
+				"G930F",
+				"G930V"
+			],
+			"resourceCategory": "TROUBLESHOOTING"
+		},
+		{
+			"id": "1d571994-51e2-4799-ba87-093b1b0da82e",
+			"filename": "A2111_FR/DIAG_EQ_TREE/resources/debrancher-chargeur-pas-utilisé (1).jpg",
+			"label": null,
+			"lastModified": "2020-08-18T11:21:49.254Z",
+			"contentId": "DIAG_EQ_TREE",
+			"language": "fr",
+			"designation": "iPhone 11",
+			"maintenanceLevel": "ILM",
+			"partNumbers": [
+				"A2111"
+			],
+			"resourceCategory": "TROUBLESHOOTING"
+		},
+		{
+			"id": "2130d4d7-ad4c-489a-b9b2-52fdb0af614d",
+			"filename": "S7/fr/ILM/G930F/REPAIR_TUTO/resources/step8-2.png",
+			"label": "step8-2.png",
+			"lastModified": "2020-10-13T11:46:24.351Z",
+			"contentId": "DIAG_EQ_TREE",
+			"language": "fr",
+			"designation": "S7",
+			"maintenanceLevel": "ILM",
+			"partNumbers": [
+				"G930F",
+				"G930V"
+			],
+			"resourceCategory": "TROUBLESHOOTING"
+		},
+		{
+			"id": "24e73c7e-782e-422f-a445-b004936fd10c",
+			"filename": "IF3290741_NA/EQ_IMAGE_REF/IF3290741.PNG",
+			"label": null,
+			"lastModified": "2020-08-05T07:42:20.351Z",
+			"contentId": "EQ_IMAGE_REF",
+			"language": "NA",
+			"designation": "GALAXY S7 CHARGING DAUGHTER BOARD (GLOBAL)",
+			"maintenanceLevel": "NA",
+			"partNumbers": [
+				"IF3290741"
+			],
+			"resourceCategory": "IMAGE"
+		},
+		{
+			"id": "2828b06f-4331-40de-99dc-b4036f453a7a",
+			"filename": "S7/fr/ILM/G930F/REPAIR_TUTO/resources/step2.png",
+			"label": "step2.png",
+			"lastModified": "2020-10-13T11:46:24.153Z",
+			"contentId": "DIAG_EQ_TREE",
+			"language": "fr",
+			"designation": "S7",
+			"maintenanceLevel": "ILM",
+			"partNumbers": [
+				"G930F",
+				"G930V"
+			],
+			"resourceCategory": "TROUBLESHOOTING"
+		},
+		{
+			"id": "31407a50-5bee-47a9-8120-d3fa2dd8b4a1",
+			"filename": "0123456789_FR/DOC_MAE/REPAIR_TUTO/resources/blanc.png",
+			"label": null,
+			"lastModified": "2020-06-24T11:41:00.350Z",
+			"contentId": "DOC_MAE",
+			"language": "fr",
+			"designation": "TEST",
+			"maintenanceLevel": "OLM",
+			"partNumbers": [
+				"0123456789"
+			],
+			"resourceCategory": "DOC"
+		}
+	]
+}
