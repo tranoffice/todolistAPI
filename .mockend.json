@@ -11,5 +11,7 @@
     "partNumbers": "Pn[]",
     "resourceCategory": "String"  
   },
-  "Pn": "String"
+  "Pn": {
+    "PartNumber": "String"
+  }
 }
