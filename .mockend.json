@@ -8,7 +8,8 @@
     "language": "String",
     "designation": "String",
     "maintenanceLevel": "String",
-    "partNumbers": "String[]",
+    "partNumbers": "Pn[]",
     "resourceCategory": "String"  
-  }
+  },
+  "Pn": "String"
 }
